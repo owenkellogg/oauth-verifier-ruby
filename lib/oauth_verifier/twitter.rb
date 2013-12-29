@@ -1,4 +1,3 @@
-require './oauth_verifier/base.rb'
 require 'json'
 
 module OauthVerifier
