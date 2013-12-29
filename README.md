@@ -9,7 +9,7 @@ user has the corresponding access token.
       consumer_secret: '...'
     })
     
-    verify.validate('facebookuuid', 'facebook_access_token') 
+    verifier.validate('facebookuuid', 'facebook_access_token') 
     => Boolean
     
 This tool will be used first to grant access to bitcoin escrow based
