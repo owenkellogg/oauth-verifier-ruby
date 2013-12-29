@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
     "lib/oauth_verifier/facebook.rb",
     "lib/oauth_verifier/base.rb" 
   ]
-  s.add_dependency 'oauth2', '0.9.2'
+  s.add_dependency 'oauth2', '~> 0.8.0'
 end
