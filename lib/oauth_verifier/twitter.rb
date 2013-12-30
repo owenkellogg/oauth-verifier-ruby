@@ -1,19 +1,21 @@
 require 'json'
+require 'twitter_oauth'
 
 module OauthVerifier
   class Twitter < Base
-    # { oauth_token: oauth_token, oauth_token_secret: oauth_token_secret }
-    def validate user_id, user_access_token_hash
-      # 
-      super(user_access_token_hash)
-      url = "https://api.twitter.com/1.1/account/verify_credentials.json"
-
-        response = JSON.parse(@access_token.get(url).body)
-        puts response
+    def validate user_id, token, secret
+      client = TwitterOAuth::Client.new({
+        consumer_key: @consumer_key,
+        consumer_secret: @consumer_secret,
+        token: token,
+        secret: secret
+      })
+      
+      begin
+        client.verify_credentails['screen_name'] == user_id
+      rescue
         false
-        #user_matches = (response["data"]["user_id"].to_s == user_id.to_s)
-        #user_matches ? response["data"]["is_valid"] : false
-        false
+      end
     end
   end
 end
