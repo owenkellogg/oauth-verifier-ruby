@@ -12,7 +12,7 @@ module OauthVerifier
       })
       
       begin
-        client.verify_credentails['screen_name'] == user_id
+        client.verify_credentials['screen_name'] == user_id
       rescue
         false
       end
