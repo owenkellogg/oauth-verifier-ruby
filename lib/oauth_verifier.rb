@@ -1,6 +1,6 @@
 module OauthVerifier
 end
 
-require("./lib/oauth_verifier/base.rb")
-require("./lib/oauth_verifier/facebook.rb")
-require("./lib/oauth_verifier/twitter.rb")
+require("./oauth_verifier/base.rb")
+require("./oauth_verifier/facebook.rb")
+require("./oauth_verifier/twitter.rb")
